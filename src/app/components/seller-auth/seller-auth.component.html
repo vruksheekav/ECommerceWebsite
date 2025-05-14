@@ -1,0 +1,46 @@
+<div class="container-fluid signbody">
+<div *ngIf="!showLogin" class="row">
+<div class="sellar-auth col-6">
+    <div class="sign-up">
+        <h1>New User</h1>
+        <p>Please enter Your details</p>
+        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)"  class="common-form">
+            <input type="text" class="form-input mb-3" placeholder="Enter Name" name="name" ngModel>
+            <input type="password" class="form-input mb-3" placeholder="Enter Password" name="password" ngModel>
+            <input type="email" class="form-input mb-3" placeholder="Enter Email" name="email" ngModel>
+            <button class="form-button">Sign Up</button>
+            <a class="auth-toggle-link" (click)="openLogin()">Already have account? Click for Login</a>
+        </form>
+    </div>
+</div>
+
+    <div class=" col-6 signimg">
+    <img src="assets/img/pexels-frendsmans-1926769.jpg" alt="Signup image" class="imgsign">
+    </div>
+
+</div>
+<div *ngIf="showLogin" class="row">
+<div class="sellar-auth col-6">
+    <div  class="sign-up">
+        <h1>Welcome Back</h1>
+        <p>Welcome Back, Please enter Your details</p>
+        <p class="text-danger">{{authError}}</p>
+        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)"  class="common-form">
+            <input type="email" class="form-input mb-3" placeholder="Enter Email" name="email" ngModel>
+            <!-- <input type="text" class="form-input mb-3" placeholder="Enter Name" name="name" ngModel> -->
+            <input type="password" class="form-input mb-3" placeholder="Enter Password" name="password" ngModel>
+            <button class="form-button">Login</button>
+            <a class="auth-toggle-link" (click)="openSignUp()">Don't have account? Click for Sign-Up</a>
+
+        </form>
+    </div>
+</div>
+
+    <div class=" col-6 signimg">
+    <img src="assets/img/pexels-luizph-2647098.jpg" alt="Signup image" class="imgsign">
+    </div>
+
+</div>
+
+
+</div>
