@@ -11,7 +11,7 @@ import { SellerService } from './services/seller.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'newstandalone';
   showHeader = true;
 
@@ -23,11 +23,9 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
-  // ngOnInit(): void {
-  //   this.sellerService.reloadSeller();  // ✅ Restore session on app load
-  // }
+ 
+
+  
+
 }

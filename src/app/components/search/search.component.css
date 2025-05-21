@@ -1,0 +1,35 @@
+
+.detailimg{
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    margin-top: 10%;
+    padding: 100px;
+    
+}
+
+.img-detail{
+    width: 100%;
+
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 11%;  
+}
+
+.details h6{
+    font-size: 30px;
+    color: #D25802;
+}
+
+.details p{
+    font-size: 25px;
+}
+
+.details span{
+    margin-right: 10px;
+}

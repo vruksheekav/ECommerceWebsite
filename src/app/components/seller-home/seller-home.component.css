@@ -1,0 +1,22 @@
+.product-list{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    text-align:  center;
+    border-collapse: collapse;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+
+table td, table th{
+    border: 1px solid orange;
+    padding: 10px;
+    min-width: 100px;
+}

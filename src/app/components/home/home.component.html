@@ -1,1 +1,57 @@
-<p>home works!</p>
+
+	<div class="heroimg-div">
+		<img src="assets/img/pexels-cottonbro-9836581.jpg" class="hero-image">
+		<div class="pop-h1">
+         	<h1><i>Welcome to the Fashion</i></h1>
+			<button class="herobutton"><a href="#products" class="foota">Read More</a></button>
+		</div>
+	</div>
+
+
+<div class="container carousel-popular-product">
+	<div class="pop-title">
+     	<h1 id ="products">Popular Products</h1>
+	</div>
+	<ngb-carousel *ngIf="popularProducts"  [animation]="true" [interval]="3000">
+		<ng-template *ngFor="let item of popularProducts" ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img class="product-header-img" src="{{item.image}}" alt="Random first slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>{{item.name}}</h3>
+				<p>{{item.description}}</p>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+</div>
+
+<div class="container">
+	<div class="product-list-wrapper">
+		<h1>Trendy Products</h1>
+		<div class="row">
+			<div class="col-sm-3" *ngFor="let item of trendyProducts">
+				<div class="product-item">
+					<img src="{{item.image}}"
+						alt="img1" class="trendy-img">
+					<div class="product-details">
+						<h6 class="name-head">{{item.name}}</h6>
+					
+					<div class="price-details">
+						<h6>Price: {{item.price}}</h6>
+					</div>
+					<div class="product-color">
+						<h6>Color: {{item.color}}</h6>
+					</div>
+                    </div>
+					<div class="product-footer">
+						<button class="footbutton mt-3 mb-3"><a href="" class="foota">View Details</a></button>
+						<button class="footbutton mt-3 mb-3"><a href="" class="foota">Add to Cart</a></button>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+

@@ -305,6 +305,50 @@
       "name": "Vruksheeka Deshmukh",
       "password": "12345",
       "email": "vdeshmukh@dnvsspl.com"
+    },
+    {
+      "id": "7c26",
+      "name": "Vruksheeka Deshmukh",
+      "password": "34567",
+      "email": "sdeshmukh@dnvsspl.com"
+    }
+  ],
+  "products": [
+    {
+      "name": "Check Tshirt",
+      "price": "5000 Rs",
+      "category": "Tshirt",
+      "color": "Blue",
+      "description": "Blue and White check Tshirt",
+      "image": "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": "6503"
+    },
+    {
+      "id": "aade",
+      "name": "Woolen Sweater",
+      "price": "$200",
+      "category": "Sweater",
+      "color": "Blue",
+      "description": "White and Blue Strips Sweater",
+      "image": "https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": "720a",
+      "name": "Dress",
+      "price": "$2000",
+      "category": "Dresses",
+      "color": "Green",
+      "description": "Flower Print Green Dress",
+      "image": "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "name": "Shirt",
+      "price": "600",
+      "category": "Trouser",
+      "color": "black",
+      "description": "black shirt ",
+      "image": "https://media.istockphoto.com/id/483960103/photo/blank-black-t-shirt-front-with-clipping-path.jpg?s=612x612&w=0&k=20&c=d8qlXILMYhugXGw6zX7Jer2SLPrLPORfsDsfRDWc-50=",
+      "id": "a4ea"
     }
   ]
 }
