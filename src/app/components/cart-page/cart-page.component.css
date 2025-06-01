@@ -6,9 +6,7 @@
     text-align: center;
 }
 
-.details{
-    
-}
+
 .details img{
     height: 100px;
 }
@@ -40,4 +38,28 @@
 .summary ul li{
     display: flex;
     justify-content: space-between;
+}
+.form-button{
+    padding: 10px;
+        border: 1px solid #D6536D;
+     color: white;
+    border-radius: 10px;
+    background-color: #D6536D;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+   
+}
+
+.form-button:hover{
+     transform: translateY(-2px);
+    background-color: transparent;
+    border: 1px solid #EFB11D;
+    color: #EFB11D;
+
+
+}
+
+.maxwidth{
+    width: 100%;
 }

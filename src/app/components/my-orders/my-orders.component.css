@@ -1,0 +1,41 @@
+.form-button{
+    padding: 10px;
+        border: 1px solid #D6536D;
+     color: white;
+    border-radius: 10px;
+    background-color: #D6536D;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+   
+}
+
+.form-button:hover{
+     transform: translateY(-2px);
+    background-color: transparent;
+    border: 1px solid #EFB11D;
+    color: #EFB11D;
+
+
+}
+
+.my-orders h1{
+    margin: 50px;
+    margin-bottom: 50px;
+}
+
+.my-orders .order-img{
+    width: 100%;
+    height: 100px;
+}
+
+.order-data{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-orders{
+  margin-bottom: 100px;  
+}

@@ -1,0 +1,67 @@
+.checkout{
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.checkout h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3{
+    text-align: center;
+}
+
+.formclass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.common-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form-input{
+    height: 50px;
+    border: 1px solid #E1E1D1;
+    border-radius: 10px;
+    padding-left: 15px;
+    background-color: #fcfcf9;
+   
+}
+.form-input:hover{
+    
+    border: 1px solid #000;
+    
+}
+
+.form-input:focus {
+    border: 1px solid #000;
+    outline: none; 
+}
+
+.form-button{
+    padding: 10px;
+        border: 1px solid #D6536D;
+     color: white;
+    border-radius: 10px;
+    background-color: #D6536D;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+   
+}
+
+.form-button:hover{
+     transform: translateY(-2px);
+    background-color: transparent;
+    border: 1px solid #EFB11D;
+    color: #EFB11D;
+
+
+}

@@ -9,6 +9,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ProdutDetailsComponent } from './components/produt-details/produt-details.component';
 import { UserAuthComponent } from './components/user-auth/user-auth.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 
 export const routes: Routes = [
     {
@@ -48,6 +50,14 @@ export const routes: Routes = [
     {
         path:'cart-page',
         component:CartPageComponent
+    },
+    {
+        path:'checkout',
+        component:CheckoutComponent
+    },
+    {
+        path:'my-orders',
+        component:MyOrdersComponent
     }
 
 ];
