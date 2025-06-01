@@ -18,7 +18,7 @@ export class AppComponent{
   constructor(private router: Router, private sellerService: SellerService) {  
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const hiddenRoutes = ['/seller-auth'];
+        const hiddenRoutes = ['/seller-auth','/user-auth'];
         this.showHeader = !hiddenRoutes.some(route => event.url.startsWith(route));
       }
     });

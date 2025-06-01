@@ -1,0 +1,93 @@
+.user-auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.common-form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.form-input{
+    height: 50px;
+    border: 1px solid #E1E1D1;
+    border-radius: 10px;
+    padding-left: 15px;
+    background-color: #fcfcf9;
+   
+}
+.form-input:hover{
+    
+    border: 1px solid #000;
+    
+}
+
+.form-input:focus {
+    border: 1px solid #000;
+    outline: none; 
+}
+
+.form-button{
+    height: 50px;
+    border: 1px solid ;
+    border-radius: 10px;
+    background-color: #000;
+    color: #E1E1D1;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ .form-button:hover{
+    transform: translateY(-2px);
+ }
+
+ .signimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.imgsign{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+.auth-toggle-link{
+    
+    color: #000;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+}
+
+.sign-up h1{
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+
+
+.user-login{
+    text-align: center;
+}
+
+.user-login h1{
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}

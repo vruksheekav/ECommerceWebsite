@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { CartPageComponent } from './cart-page.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('CartPageComponent', () => {
+  let component: CartPageComponent;
+  let fixture: ComponentFixture<CartPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent]
+      imports: [CartPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(CartPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

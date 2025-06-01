@@ -9,7 +9,7 @@ import { product } from '../../data-type';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgbCarouselModule],
+  imports: [CommonModule, NgbCarouselModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit{
 
   popularProducts:undefined | product[]
   trendyProducts:undefined | product[]
+item: any;
 
   constructor(private product:ProductService){}
 
@@ -29,6 +30,5 @@ export class HomeComponent implements OnInit{
         this.trendyProducts=data;
       });
   }
- 
 
 }

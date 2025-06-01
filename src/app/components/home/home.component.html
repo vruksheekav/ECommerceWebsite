@@ -1,36 +1,69 @@
 
-	<div class="heroimg-div">
+	<!-- <div class="heroimg-div">
 		<img src="assets/img/pexels-cottonbro-9836581.jpg" class="hero-image">
 		<div class="pop-h1">
          	<h1><i>Welcome to the Fashion</i></h1>
 			<button class="herobutton"><a href="#products" class="foota">Read More</a></button>
 		</div>
+	</div> -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-8 herocontent">
+				<div class="heroalign">
+                 <h1 class="mb-4 heroh1">Style That Speaks</h1>
+                <pre class="mb-2 heropre" >Using one's apparel, footwear, way of life, and accessories,
+fashionstas at any given time and place exhibit their individualit
+and seek to stan out from the crowd.
+				</pre>
+				<button class="herobutton" >Explore <i class="fa-solid fa-arrow-right"></i></button>
+				 <div class="shape-1"></div>
+                 <div class="shape-2"></div>
+				</div>
+				
+				
+			</div>
+			<div class="col-4 p-0">
+				<div class="heroimage">
+                <img src="assets/img/pexels-koolshooters-6976657.jpg" class="hero-image">
+				</div>
+			</div>
+		</div>
 	</div>
 
 
-<div class="container carousel-popular-product">
-	<div class="pop-title">
-     	<h1 id ="products">Popular Products</h1>
+<div class="container-fluid trendy-section">
+	<div class="container">
+		<div class="poppro">
+				<h1 class="pop-title pt-4 mb-5" id="products">Popular Products</h1>
+			<ngb-carousel *ngIf="popularProducts" [animation]="true" [interval]="3000">
+				<ng-template *ngFor="let item of popularProducts" ngbSlide>
+					<div class="picsum-img-wrapper">
+						<a routerLink="/product-details/{{item.id}}" class="product-header-img">
+							<img src="{{item.image}}" alt="Random first slide" />
+						</a>
+					</div>
+					<div class="carousel-caption">
+						<h3>{{item.name}}</h3>
+						<p>{{item.description}}</p>
+					</div>
+				</ng-template>
+			</ngb-carousel>
+		</div>
+
 	</div>
-	<ngb-carousel *ngIf="popularProducts"  [animation]="true" [interval]="3000">
-		<ng-template *ngFor="let item of popularProducts" ngbSlide>
-			<div class="picsum-img-wrapper">
-				<img class="product-header-img" src="{{item.image}}" alt="Random first slide" />
-			</div>
-			<div class="carousel-caption">
-				<h3>{{item.name}}</h3>
-				<p>{{item.description}}</p>
-			</div>
-		</ng-template>
-	</ngb-carousel>
 </div>
 
-<div class="container">
-	<div class="product-list-wrapper">
-		<h1>Trendy Products</h1>
-		<div class="row">
-			<div class="col-sm-3" *ngFor="let item of trendyProducts">
-				<div class="product-item">
+
+
+
+
+   <div class="container-fluid trendy-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<h1 class="pop-title mt-5 mb-5">Trendy Products</h1>
+              <div class="col-sm-3" *ngFor="let item of trendyProducts">
+				<div class="card product-item">
 					<img src="{{item.image}}"
 						alt="img1" class="trendy-img">
 					<div class="product-details">
@@ -44,14 +77,54 @@
 					</div>
                     </div>
 					<div class="product-footer">
-						<button class="footbutton mt-3 mb-3"><a href="" class="foota">View Details</a></button>
-						<button class="footbutton mt-3 mb-3"><a href="" class="foota">Add to Cart</a></button>
+						<button class="footbutton mt-3 mb-3"><a routerLink ="/product-details/{{item.id}}" class="foota">View Details</a></button>
+						<button class="footbutton mt-3 mb-3"><a routerLink ="/product-details/{{item.id}}" class="foota">Add to Cart</a></button>
 					</div>
 				</div>
+		
 			</div>
 		
 		</div>
 	</div>
-</div>
+   </div>
 
 
+
+
+	<!-- <div class="container-fluid">
+		<div class="pop-title">
+			
+			<div class="row">
+				<h1>Trendy Products</h1>
+				<div class="col-3 mb-4" *ngFor="let item of trendyProducts">
+					<div class="card" style="width: 18rem;">
+						<img src="{{item.image}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{item.name}}</h5>
+							<p class="card-text">{{item.color}}</p>
+							<a href="#" class="btn btn-primary">View Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-deck row gy-5 mb-5" *ngFor="let item of trendyProducts">
+		<div class="card position-relative">
+			<div>
+				<div class="imgimg">
+				<img src="{{item.image}}">
+				</div>
+				<div>
+					<h5 class="card-title">{{item.name}}</h5>
+							<p class="card-text">{{item.color}}</p>
+							<a href="#" class="btn btn-primary">View Details</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+ -->
