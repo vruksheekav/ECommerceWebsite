@@ -4,6 +4,25 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(45deg, #f0f0f0, #ffe0e0);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #EFB11D, #D6536D, #E43D12);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #D6536D, #E43D12, #EFB11D);
+}
 .carousel-control-next-icon, .carousel-control-prev-icon{
     display: none;
 }
@@ -13,3 +32,12 @@ body{
     border-radius: 5px;
 }
 
+* {
+  box-sizing: border-box; 
+}
+
+.container {
+  width: 100%;
+  
+  overflow-x: hidden;
+}

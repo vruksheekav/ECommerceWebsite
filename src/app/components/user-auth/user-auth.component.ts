@@ -34,6 +34,7 @@ export class UserAuthComponent implements OnInit {
         this.authError = "User not found";
       } else {
         this.localCartToRemoteCart();
+        this.localWishlistToRemoteWishlist();
       }
     });
   }
@@ -79,6 +80,40 @@ export class UserAuthComponent implements OnInit {
     });
   }
 }
+localWishlistToRemoteWishlist() {
+  const localWishlist = localStorage.getItem('localWishlist');
+  const user = localStorage.getItem('user');
+
+  if (localWishlist && user) {
+    const wishlistDataList = JSON.parse(localWishlist);
+    const userId = JSON.parse(user).id;
+
+    this.product.getWishlist(userId);
+    this.product.wishlistData.subscribe((remoteWishlist: any[]) => {
+      const remoteProductIds = remoteWishlist.map(item => item.productid);
+
+      wishlistDataList.forEach((product: any, index: number) => {
+        if (!remoteProductIds.includes(product.id)) {
+          const wishlistItem = {
+            ...product,
+            productId: product.id,
+            userId,
+          };
+          delete wishlistItem.id;
+
+          setTimeout(() => {
+            this.product.addToWishlist(wishlistItem).subscribe(() => {
+              if (index === wishlistDataList.length - 1) {
+                localStorage.removeItem('localWishlist');
+              }
+            });
+          }, 500);
+        }
+      });
+    });
+  }
+}
+
 
 }
 

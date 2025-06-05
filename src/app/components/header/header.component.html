@@ -1,45 +1,136 @@
 <div class="nav container-fluid">
     <div class="cname">
-    <h1><a routerLink="/home" ><i><i class="fa-solid fa-star"></i> FayZ</i></a></h1>
+        <h1><a routerLink="/home"><i><i class="fa-solid fa-star"></i> FayZ</i></a></h1>
     </div>
-    <div *ngIf="menuType ==='default'" class="nav-search">
-        <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search Products">
-        <button (click)="submitSearch(searchInput.value)">Search</button>
-        <ul class="suggested-result" *ngIf="searchResult">
-        <li *ngFor="let item of searchResult">
-            <a (mousedown)="redirectToDetails(item.id)">{{item?.name}}</a>
-        </li>
+
+
+ <input type='checkbox' id='check' />
+    <div class="nav-menu">
+       
+        <div *ngIf="menuType ==='default' || menuType ==='user'" class="nav-search">
+            <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+                placeholder="Search Products">
+            <button (click)="submitSearch(searchInput.value)">Search</button>
+            <ul class="suggested-result" *ngIf="searchResult">
+                <li *ngFor="let item of searchResult">
+                    <a (mousedown)="redirectToDetails(item.id)">{{item?.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div [ngSwitch]="menuType" class="list-items">
+            <!-- <ul *ngSwitchCase="'default'">
+                <li><a routerLink="seller-auth">Seller</a></li>
+                <li><a routerLink="home">Home</a></li>
+                <li><a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"><i
+                            class="fa-solid fa-heart custom-size"></i></a></li>
+                <li><a routerLink="cart-page"><i class="fa-solid fa-cart-shopping custom-size"></i>({{cartItems}})</a></li>
+                <li><a routerLink="/user-auth">Login</a></li>
+                <div class="dropdown">
+                    <a routerLink="/user-auth"><i class="fa-solid fa-circle-user dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"></i> </a>
+        
+                    <div class="dropdown-menu">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+
+
+
+            </ul> -->
+            <ul *ngSwitchCase="'default'">
+                <li><a routerLink="seller-auth">Seller</a></li>
+                <li><a routerLink="home">Home</a></li>
+                <li>
+                    <a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">
+                        <i class="fa-solid fa-heart custom-size"></i>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="cart-page">
+                        <i class="fa-solid fa-cart-shopping custom-size"></i>({{ cartItems }})
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link " href="#" >
+                        <i class="fa-solid fa-circle-user custom-size"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="fa-solid fa-circle-user fa-5x mb-3"></i>
+                                <p class="card-text">
+                                    Sign in To The Account
+                                </p>
+                                <a routerLink="/user-auth" class="btn herobutton">Sign In</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul *ngSwitchCase="'user'" class="user-nav">
+                <li><a routerLink="seller-auth">Seller</a></li>
+                <li><a routerLink="home">Home</a></li>
+                <li><a routerLink="my-orders">Orders</a></li>
+                <li><a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">
+                    <i class="fa-solid fa-heart custom-size"></i></a></li>
+                <li><a [routerLink]="cartItems>0?'cart-page':null"><i
+                            class="fa-solid fa-cart-shopping custom-size"></i>({{cartItems}})</a></li>
+                <!-- <li class="dropdown">
+                    <span class="pfp">{{ userName[0] | uppercase }}</span>
+                    <div class="dropdown-content ">
+                <li><a routerLink="home"><i class="fa-solid fa-circle-user"></i> {{userName}}</a></li>
+                
+                <li><a (click)="userLogout()" class="ff">Logout</a></li>
+            
+                </div> -->
+                 
+                <!-- 
+                    <li><a routerLink="my-orders">My Order</a></li>
+                    <li><a (click)="userLogout()">Logout</a></li> -->
+                <!-- <li><a routerLink="home"><i class="fa-solid fa-circle-user"></i>{{userName | titlecase}}</a></li> -->
+                  <li class="dropdown">
+                    <a class="nav-link " href="#" >
+                        <span class="pfp">{{ userName[0] | uppercase }}</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <p>{{userEmail}}</p>
+                                <span class="pfp1 fa-3x mb-3">{{ userName[0] | uppercase }}</span>
+                                <p class="card-text mb-0">
+                                    Logout To The Account
+                                </p>
+                                 <li><a (click)="userLogout()" class="herobutton">Logout</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+            </ul>
+
+        <ul *ngSwitchCase="'seller'">
+            <li><a routerLink="seller-add-product">Add Product</a></li>
+            <li><a routerLink="seller-home">List</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+            <li><a href="#">{{sellerName | titlecase}}</a></li>
         </ul>
+
+
+
+   <label for="check" class="close-menu"><i class="fa-solid fa-times"></i></label>
+
     </div>
-    
-     <div [ngSwitch]="menuType">
-      <ul *ngSwitchCase="'default'">
-        <li><a routerLink="seller-auth">Seller</a></li>
-        <li><a routerLink="home">Home</a></li>
-        <li><a routerLink="/user-auth">Login</a></li>
-        <li><a routerLink="cart-page">Cart({{cartItems}})</a></li>
+         
 
-    </ul>
-
-    <ul *ngSwitchCase="'user'">
-        <li><a routerLink="seller-auth">Seller</a></li>
-        <li><a routerLink="home">{{userName | titlecase}}</a></li>
-        <li><a routerLink="my-orders">My Order</a></li>
-        <li><a (click)="userLogout()">Logout</a></li>
-        <li><a href="#">Cart({{cartItems}})</a></li>
-
-    </ul>
-
-    <ul *ngSwitchCase="'seller'">
-        <li><a routerLink="seller-add-product">Add Product</a></li>
-        <li><a routerLink="seller-home">List</a></li>
-        <li><a (click)="logout()">Logout</a></li>
-        <li><a href="#">{{sellerName | titlecase}}</a></li>
-
-    </ul>
-    </div>
-  
-    
-    
 </div>
 
+    <label for="check" class="open-menu"><i class="fa-solid fa-bars"></i></label>

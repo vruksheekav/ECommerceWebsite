@@ -11,8 +11,10 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { WishlistPageComponent } from './components/wishlist-page/wishlist-page.component';
 
 export const routes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     {
         path:'home', component:HomeComponent
     },
@@ -58,6 +60,11 @@ export const routes: Routes = [
     {
         path:'my-orders',
         component:MyOrdersComponent
-    }
+    },
+    {
+        path:'wishlist-page',
+        component:WishlistPageComponent
+    },
+   
 
 ];

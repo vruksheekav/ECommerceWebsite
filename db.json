@@ -315,15 +315,6 @@
   ],
   "products": [
     {
-      "name": "Jacket",
-      "price": "500",
-      "category": "Trouser",
-      "color": "Brown",
-      "description": "Brown Jacket",
-      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg",
-      "id": "4389"
-    },
-    {
       "name": "White Jacket",
       "price": "200",
       "category": "Trouser",
@@ -342,13 +333,22 @@
       "id": "5ed9"
     },
     {
-      "name": "Circle Earings",
-      "price": "50",
-      "category": "Accessory",
-      "color": "Khaki",
-      "description": "Khaki Circle Earrings",
-      "image": "https://images.pexels.com/photos/4036896/pexels-photo-4036896.jpeg",
+      "name": "Dress",
+      "price": "500",
+      "category": "Dress",
+      "color": "Pink",
+      "description": "Pink Dress",
+      "image": "https://img.freepik.com/free-photo/stylish-red-haired-woman-playing-with-hairs-posing-pink-lien-dress-with-sleeves-pink_273443-4417.jpg?semt=ais_hybrid&w=740",
       "id": "6fa2"
+    },
+    {
+      "id": "6742",
+      "name": "Brown Jacket",
+      "price": "500",
+      "category": "Trouser",
+      "color": "Brown",
+      "description": "Brown Jacket",
+      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg"
     }
   ],
   "users": [
@@ -419,15 +419,82 @@
       "email": "gauri@gmail.com"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "fa9e",
+      "name": "Brown Jacket",
+      "price": "500",
+      "category": "Trouser",
+      "color": "Brown",
+      "description": "Brown Jacket",
+      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg",
+      "quantity": 1,
+      "userId": "9bd4",
+      "productId": "6742"
+    }
+  ],
   "orders": [
     {
-      "id": "0309",
-      "email": "vddeshmukh178@gmail.com",
+      "id": "3955",
+      "email": "test@gmail.com",
       "address": "Tanishq Orchid, charoli Phata ",
       "contact": "1234567890",
-      "totalPrice": 800,
+      "totalPrice": 1400,
       "userId": "9bd4"
+    },
+    {
+      "id": "b3ee",
+      "email": "test@gmail.com",
+      "address": "shriram nagar",
+      "contact": "456789",
+      "totalPrice": 700,
+      "userId": "9bd4"
+    }
+  ],
+  "wishlist": [
+    {
+      "id": "2c4c",
+      "name": "Jacket",
+      "price": "500",
+      "category": "Trouser",
+      "color": "Brown",
+      "description": "Brown Jacket",
+      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg",
+      "userId": "9bd4",
+      "productId": null
+    },
+    {
+      "id": "a91d",
+      "name": "Denim Jacket",
+      "price": "600",
+      "category": "Trouser",
+      "color": "White",
+      "description": "White Denim Jacket",
+      "image": "https://img.freepik.com/free-photo/young-pretty-woman-listening-music-wireless-earphones_1303-20585.jpg?w=360",
+      "userId": "9bd4",
+      "productId": "5ed9"
+    },
+    {
+      "id": "c145",
+      "name": "White Jacket",
+      "price": "200",
+      "category": "Trouser",
+      "color": "White",
+      "description": "White Jacket",
+      "image": "https://img.freepik.com/free-photo/trendy-woman-light-jacket-holds-cup-coffee-outdoors-shorthaired-girl-bright-sunlasses-jeans-with-brown-backpack-posing-city_197531-29475.jpg",
+      "userId": "9bd4",
+      "productId": "1291"
+    },
+    {
+      "id": "2622",
+      "name": "Dress",
+      "price": "500",
+      "category": "Dress",
+      "color": "Pink",
+      "description": "Pink Dress",
+      "image": "https://img.freepik.com/free-photo/stylish-red-haired-woman-playing-with-hairs-posing-pink-lien-dress-with-sleeves-pink_273443-4417.jpg?semt=ais_hybrid&w=740",
+      "userId": "9bd4",
+      "productId": "6fa2"
     }
   ]
 }

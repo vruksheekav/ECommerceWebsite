@@ -9,21 +9,21 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-8 herocontent">
+			<div class="col-sm-8  herocontent">
 				<div class="heroalign">
                  <h1 class="mb-4 heroh1">Style That Speaks</h1>
                 <pre class="mb-2 heropre" >Using one's apparel, footwear, way of life, and accessories,
 fashionstas at any given time and place exhibit their individualit
 and seek to stan out from the crowd.
 				</pre>
-				<button class="herobutton" >Explore <i class="fa-solid fa-arrow-right"></i></button>
+				<a  href="#products" class="herobutton" >Explore <i class="fa-solid fa-arrow-right"></i></a>
 				 <div class="shape-1"></div>
                  <div class="shape-2"></div>
 				</div>
 				
 				
 			</div>
-			<div class="col-4 p-0">
+			<div class="col-sm-4 p-0">
 				<div class="heroimage">
                 <img src="assets/img/pexels-koolshooters-6976657.jpg" class="hero-image">
 				</div>
@@ -62,7 +62,7 @@ and seek to stan out from the crowd.
 	<div class="container">
 		<div class="row justify-content-center">
 			<h1 class="pop-title mt-5 mb-5">Trendy Products</h1>
-              <div class="col-sm-3" *ngFor="let item of trendyProducts">
+              <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xxl-3" *ngFor="let item of trendyProducts">
 				<div class="card product-item">
 					<img src="{{item.image}}"
 						alt="img1" class="trendy-img">
@@ -77,8 +77,8 @@ and seek to stan out from the crowd.
 					</div>
                     </div>
 					<div class="product-footer">
-						<button class="footbutton mt-3 mb-3"><a routerLink ="/product-details/{{item.id}}" class="foota">View Details</a></button>
-						<button class="footbutton mt-3 mb-3"><a routerLink ="/product-details/{{item.id}}" class="foota">Add to Cart</a></button>
+						<a class="footabutton mt-3 mb-3" routerLink ="/product-details/{{item.id}}">View Details</a>
+						<a class="footabutton mt-3 mb-3" routerLink ="/product-details/{{item.id}}">Add to Cart</a>
 					</div>
 				</div>
 		
@@ -128,3 +128,57 @@ and seek to stan out from the crowd.
 	</div>
 
  -->
+
+     <section id="footer">
+      <div class="footer py-5 ">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+              <h6>Head Office</h6>
+              <p class="mb-0">Lorem Epsum</p>
+              <p class="mb-0">Pune, Maharashtra</p>
+              <p class="mb-0"><strong>Phone:</strong> <span>+91 8740284033</span></p>
+              <p class="mb-0"><strong>Email:</strong> <span>infoexample.com</span></p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h6 class="footer-titles">Useful Links</h6>
+              <ul class="p-0">
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#home"class="footer-link">Home</a></li>
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#about" class="footer-link">Seller</a></li>
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#explore-food" class="footer-link">Login</a></li>
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#testimonial" class="footer-link">Cart</a></li>
+
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h6 class="footer-titles">Extra Links</h6>
+              <ul class="p-0">
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#counter"class="footer-link">Popular Products</a></li>
+                <li><i class="fa-solid fa-chevron-right"></i><a href="#story" class="footer-link">Trendy Products</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+              <h6 class="footer-titles">Follow Us</h6>
+              <div class="social-links d-flex p-0">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+     </section>
+	 <section id="copyright">
+      <div class="copyright copy-right text-center">
+        <p class="text-light mb-0">© 2025. FayZ. All rights reserved.</p>
+      </div>
+    </section>

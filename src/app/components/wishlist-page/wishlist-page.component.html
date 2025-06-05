@@ -1,0 +1,39 @@
+<div class="cart-page-bg">
+<div class="container-fluid">
+<div class="container cart-page">
+    <i class="fa-solid fa-heart heart"></i>
+<h1 class="p-4">My Wishlist</h1>
+<div class="row">
+    <div class="col-lg-12 col-md-12 details">
+      <ul *ngFor="let cart of wishlistData">
+        <li>
+            <img src="{{cart.image}}" alt="" class="cartimg">
+        </li>
+        <li>
+            <span><b>{{cart.name}}</b></span><br>
+           
+        </li>
+        <li>
+            <span>{{cart.price}}</span>
+        </li>
+        <li>
+             <span>{{cart.color}}</span><br>
+        </li>
+        <li>
+             <span>{{cart.description}}</span>
+        </li>
+        <li>
+            <button class="form-button">View Details</button>
+        </li>
+      </ul>
+    </div>
+   
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+

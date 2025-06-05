@@ -1,12 +1,12 @@
 <div class="container-fluid signbody">
     <div *ngIf="!showLogin"  class="row">
-        <div class="user-auth col-6">
+        <div class="user-auth col-sm-12">
             <div class="sign-up">
                 <h1>Create Your Account</h1>
                 <p>Please enter Your details</p>
                 <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form">
                     <input type="text" class="form-input mb-3" placeholder="Enter Name" name="name" ngModel #name="ngModel" required>
-                    <input type="password" class="form-input mb-3" placeholder="Enter Password" name="password" ngModel #password="ngModel" required minlength="2" maxlength="20">
+                    <input type="password" class="form-input " placeholder="Enter Password" name="password" ngModel #password="ngModel" required minlength="2" maxlength="20">
                     <p><span *ngIf="password.invalid && password.touched" class="text-danger">Please Enter Valid Value</span></p>
                     <input type="email" class="form-input mb-3" placeholder="Enter Email" name="email" ngModel #email="ngModel" required email>
                     <p><span *ngIf="email.invalid && email.touched" class="text-danger">Please Enter Valid Value</span></p>
@@ -15,33 +15,37 @@
                 </form>
             </div>
         </div>
+        
 
-        <div class=" col-6 signimg">
+        <!-- <div class=" col-sm-6 signimg">
             <img src="assets/img/pexels-athena-2043590.jpg" alt="Signup image" class="imgsign">
-        </div>
+        </div> -->
 
 
     </div>
+     <div class="shape-1"></div>
+         <div class="shape-2"></div>
      <div *ngIf="showLogin" class="row">
-        <div class="user-auth col-6">
+        <div class="user-auth col-sm-12">
             <div class="user-login">
-                <h1>Welcome Back</h1>
-                <p>Welcome Back, Please enter Your details</p>
+                <h1>Welcome Back Here</h1>
+                <p class="m-0">Welcome Back, Please enter Your details</p>
                 <form #userLogin="ngForm" (ngSubmit)="login(userLogin.value)" class="common-form">
                     <p class="text-danger">{{authError}}</p>
                     <input type="email" class="form-input mb-3" placeholder="Enter Email" name="email" ngModel>
-                    <input type="password" class="form-input mb-3" placeholder="Enter Password" name="password" ngModel>
+                    <input type="password" class="form-input mb-4" placeholder="Enter Password" name="password" ngModel>
                     <button class="form-button">Login</button>
                     <a (click)="openSignUp()" class="auth-toggle-link"> Want to Create Account ? Click Here</a>
                 </form>
             </div>
         </div>
 
-        <div class=" col-6 signimg">
+        <!-- <div class=" col-sm-6 signimg">
             <img src="assets/img/pexels-mikoto-4132651.jpg" alt="Signup image" class="imgsign">
-        </div>
+        </div> -->
 
 
     </div>
+    
 
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-import { cart, product } from '../../data-type';
+import { cart, product, wishlist } from '../../data-type';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,8 +15,12 @@ export class ProdutDetailsComponent implements OnInit {
 productData:undefined | product;
 productQuantity: number=1;
 removeCart=false;
+removeWishlist=false;
 cartData:product|undefined;
 cartItems: product[] = [];
+wishlistItems: wishlist[] = [];
+
+
 
   constructor(private activeRoute:ActivatedRoute, private product:ProductService){}
 
@@ -53,13 +57,22 @@ cartItems: product[] = [];
         })
 
         this.product.cartData.subscribe((items) => {
-    this.cartItems = items;  // store the latest cart items
-  });
-
+    this.cartItems = items;  
+     });
+        this.product.getWishlist(userId);
+      this.product.wishlistData.subscribe((items: wishlist[]) => {
+        this.wishlistItems = items;
+        let matched = items.find((item) => item.productId?.toString() === productid);
+        if (matched) {
+          this.removeWishlist = true;
+        }
+      });
 
         }
 
       })
+
+  
   }
   handleQuantity(val:string){
      if(this.productQuantity<20 && val==='plus'){
@@ -95,31 +108,95 @@ cartItems: product[] = [];
     }
   }
 
-removeToCart(productId: number): void {
-  console.log('removeToCart called');
+  
 
-  const user = localStorage.getItem('user');
-  if (!user) {
-    this.product.removeItemFromCart(productId);
-    this.removeCart = false;
-  } else {
-    const userId = JSON.parse(user).id;
+  removeToCart(productId: number): void {
+    console.log('removeToCart called');
 
-    const item = this.cartItems.find((c: any) => c.productId?.toString() === productId.toString());
-
-    if (item && item.id) {
-      this.product.removeToCart(item.id).subscribe(() => {
-        console.log('Removed from server, now updating cart list...');
-        this.product.getCartList(userId);
-        this.removeCart = false;
-      });
+    const user = localStorage.getItem('user');
+    if (!user) {
+      this.product.removeItemFromCart(productId);
+      this.removeCart = false;
     } else {
-      console.warn('Item not found for removal');
+      const userId = JSON.parse(user).id;
+
+      const item = this.cartItems.find((c: any) => c.productId?.toString() === productId.toString());
+
+      if (item && item.id) {
+        this.product.removeToCart(item.id).subscribe(() => {
+          console.log('Removed from server, now updating cart list...');
+          this.product.getCartList(userId);
+          this.removeCart = false;
+        });
+      } else {
+        console.warn('Item not found for removal');
+      }
+    }
+  }
+
+AddToWishlist() {
+  if (this.productData) {
+    if (!localStorage.getItem('user')) {
+      console.warn('Guest user - wishlist not supported');
+    } else {
+      const userId = JSON.parse(localStorage.getItem('user')!).id;
+      const wishlistData: wishlist = {
+        ...this.productData,
+        userId,
+        productId: this.productData.id
+      };
+      delete wishlistData.id;
+
+      this.product.addToWishlist(wishlistData).subscribe((result) => {
+        if (result) {
+          this.removeWishlist = true;
+          this.product.getWishlist(userId);
+        }
+      });
     }
   }
 }
 
+// removeToWishlist(productId: number): void {
+//   const user = localStorage.getItem('user');
+//   if (user) {
+//     const userId = JSON.parse(user).id;
+//     const item = this.wishlistItems.find(
+//       (w: any) => w.productid?.toString() === productId.toString()
+//     );
 
+//     if (item && item.id) {
+//       this.product.removeToWishlist(item.id).subscribe(() => {
+//         this.inWishlist = false;
+//         this.product.getWishlist(userId);
+//       });
+//     }
+//   }
+// }
 
+removeToWishlist(productId: number): void {
+    console.log('removeToWishlist called');
+
+    const user = localStorage.getItem('user');
+    if (!user) {
+      this.product.removeItemFromCart(productId);
+      this.removeWishlist = false;
+    } else {
+      const userId = JSON.parse(user).id;
+
+      const item = this.wishlistItems.find((c: any) => c.productId?.toString() === productId.toString());
+
+      if (item && item.id) {
+        this.product.removeToWishlist(item.id).subscribe(() => {
+          console.log('Removed from server');
+          this.product.getWishlist(userId);
+          this.removeWishlist = false;
+        });
+      } else {
+        console.warn('Item not found for removal');
+      }
+    }
+  }
+ 
 
 }

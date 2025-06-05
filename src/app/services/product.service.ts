@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { cart, order, product } from '../data-type';
+import { cart, order, product, wishlist } from '../data-type';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
    cartData = new EventEmitter<product[] | []>();
+   wishlistData = new EventEmitter<wishlist[] | []>();
   constructor(private http:HttpClient) { }
   addProduct(data:product){
     return this.http.post('http://localhost:3000/products', data);
@@ -112,4 +113,33 @@ deleteCartItems(cartId:number){
 cancelOrder(orderId:number|string){
 return this.http.delete('http://localhost:3000/orders/' +orderId);
 }
+
+addToWishlist(wishlistData:wishlist){
+  return this.http.post('http://localhost:3000/wishlist', wishlistData);
+}
+
+getWishlist(userId: string | number){
+  return this.http.get<wishlist[]>('http://localhost:3000/wishlist?userId=' +userId,
+    {observe:'response'}).subscribe((result)=>{
+      if(result && result.body){
+        this.wishlistData.emit(result.body);
+      }
+    });
+}
+
+removeToWishlist(wishlistId: string | number) {
+  return this.http.delete('http://localhost:3000/wishlist/' + wishlistId)
+  
+
+}
+  
+
+
+currentWishlist(){
+    let userStore= localStorage.getItem('user');
+    let userData= userStore && JSON.parse(userStore);
+    return this.http.get<cart[]>('http://localhost:3000/wishlist?userId='+userData.id)
+}
+
+
 }

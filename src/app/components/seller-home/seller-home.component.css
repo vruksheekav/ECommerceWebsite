@@ -1,3 +1,9 @@
+.container-fluid{
+      background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 74%, rgba(239,176,29,0.486) 100%);
+      min-height: 100vh;
+      
+}
+
 .product-list{
     flex-direction: column;
     justify-content: center;
@@ -19,4 +25,7 @@ table td, table th{
     border: 1px solid orange;
     padding: 10px;
     min-width: 100px;
+}
+h1{
+    text-align: center;
 }

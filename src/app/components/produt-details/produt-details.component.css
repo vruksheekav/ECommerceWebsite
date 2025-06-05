@@ -1,18 +1,33 @@
+.container-fluid{
+    background: #FFF;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 74%, rgba(239, 177, 29, 0.73) 100%);
 
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  height: 100vh;
+
+}
 .product-details{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10% ;
-  position: fixed;
-  
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    z-index: 100;
+     border: 1px solid rgba(128, 128, 128, 0.548);
 }
+
+
 .product-image-div{
   display: flex;
   justify-content: center;
   align-items: center;
-
- 
+  
 }
 
 .product-image{
@@ -30,11 +45,89 @@
 }
 
 .product-color{
-  border: 3px solid #000;
+  border: 3px solid #EFB11D;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
+h6{
+  font-size: 20px;
+}
+
+     /* .gray-heart, .red-heart {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      transform: rotate(-45deg);
+      background-color: #ccc;
+    }
+
+    .gray-heart::before,
+    .gray-heart::after,
+    .red-heart::before,
+    .red-heart::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .gray-heart::before,
+    .red-heart::before {
+      top: -15px;
+      left: 0;
+    }
+
+    .gray-heart::after,
+    .red-heart::after {
+      top: 0;
+      left: 15px;
+    }
+
+    .gray-heart::before,
+    .gray-heart::after {
+      background-color: #ccc;
+    }
+
+    .red-heart {
+      top:-30px;
+      background-color: #D6536D;
+      visibility: hidden;
+    }
+
+    .red-heart::before,
+    .red-heart::after {
+      background-color: #D6536D;
+    }
+
+    .red-heart.animation {
+      animation: pop 0.9s linear;
+      visibility: visible;
+    }
+
+    .heart.fill-color {
+      background-color: #D6536D;
+    }
+
+    @keyframes pop {
+      100%{
+        transform: scale(1.7) rotate(-45deg);
+        opacity: 0;
+      }
+    } */
+
+    .gray-heart i {
+  color: #ccc;
+  font-size: 50px;
+}
+
+.red-heart i {
+  color: #D6536D;
+  font-size: 50px;
+}
+
 
 .button-div{
  display: flex;
@@ -42,28 +135,117 @@
  gap: 10px;
 }
 
+
 .shopbutton{
-    color: #E1E1D1;
+    color: #fff;
     padding: 10px;
-    border: 1px solid #D25802;
+    border: 1px solid #D6536D;
     border-radius: 10px;
-    background-color: #D25802;
+    background-color: #D6536D;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
+    font-size: 20px;
  
 }
 
 .shopbutton:hover{
   transform: translateY(-2px);
+   background-color: transparent;
+    border: 1px solid #EFB11D;
+    color: #EFB11D;
+
 
 }
 .quatity-group-button{
-  background-color: #000;
+  background-color: #D6536D;
   color: #fff;
+  border: 2px solid #D6536D;
 }
 .quatity-group input{
   width: 30px;
+  border: #EFB11D;
 }
 .quantitytext{
   text-align: center;
+  color: #EFB11D;
+}
+.shape-1,
+.shape-2 {
+  position: absolute;
+  z-index: 0;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 162, 182, 0.411);
+  top: 300px;
+  animation: spinScale 10s infinite ease-in-out;
+
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 162, 182);
+  
+  top: 600px;
+  animation: spinScaleReverse 12s infinite ease-in-out;
+
+}
+/* Animation Keyframes */
+@keyframes spinScale {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+}
+
+@keyframes spinScaleReverse {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.2);
+  }
+}
+
+@media (max-width:1000px){
+    .shape-2{
+        display: none;
+    }
+}
+@media (max-width:767px){
+
+  .h1{
+    font-size: 17px;
+  }
+
+  .shopbutton{
+    font-size: 17px;
+  }
+  .button-div{
+    gap: 5px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+  .container {
+    height: 140vh; /* Consider using 100vh or auto if overflow occurs */
+    overflow-x: hidden; /* Optional, only if overflow issues remain */
+  }
 }

@@ -18,7 +18,8 @@ export class SellerService {
     console.warn(result)
     if(result){
        this.isSellerLoggedIn.next(true)
-       localStorage.setItem('seller', JSON.stringify(result.body))
+       localStorage.setItem('seller', JSON.stringify(result.body));
+       this.isSellerLoggedIn.next(true);
        this.router.navigate(['seller-home'])
     }
   });
@@ -42,6 +43,7 @@ userLogin(data: login) {
       this.router.navigate(['seller-home']);                           
     } else {
       console.warn("login failed");
+      this.isSellerLoggedIn.next(true);
       this.isLoginError.emit(true)
        
     }

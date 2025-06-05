@@ -1,13 +1,17 @@
+<div class="cart-page-bg">
+<div class="container-fluid">
 <div class="container cart-page">
-<h1>Cart Page</h1>
+<h1 class="p-4"><i class="fa-solid fa-bag-shopping"></i> My Cart</h1>
 <div class="row">
-    <div class="col-sm-8 details">
+    <div class="col-lg-8 col-md-12 details">
       <ul *ngFor="let cart of cartData">
         <li>
-            <img src="{{cart.image}}" alt="">
+            <img src="{{cart.image}}" alt="" class="cartimg">
         </li>
         <li>
-            <span>{{cart.name}}</span>
+            <span><b>{{cart.name}}</b></span><br>
+            <!-- <span>{{cart.color}}</span><br>
+            <span>{{cart.description}}</span> -->
         </li>
         <li>
             <span>{{cart.price}}</span>
@@ -16,11 +20,11 @@
             <span>{{cart.quantity}}</span>
         </li>
         <li>
-            <button class="form-button">Remove to Cart</button>
+            <button class="form-button" (click)="removeToCart(cart.id)">Remove to Cart</button>
         </li>
       </ul>
     </div>
-    <div class="col-sm-4 summary">
+    <div class="col-lg-4 col-md-12 summary">
        <h3>Summary</h3>
        <ul>
         <li>
@@ -40,4 +44,10 @@
        </ul>
     </div>
 </div>
+
 </div>
+
+</div>
+</div>
+
+

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { product } from '../../data-type';
+import { UserService } from '../../services/user.service';
+import { SellerService } from '../../services/seller.service';
 
 @Component({
   selector: 'app-header',
@@ -17,8 +19,13 @@ export class HeaderComponent implements OnInit{
   sellerName:string="";
   searchResult:undefined|product[];
   userName:string="";
+  userEmail:string="";
   cartItems=0;
-  constructor(private route: Router, private product:ProductService) {}
+  isMenuOpen: boolean = false;
+ 
+
+
+  constructor(private route: Router, private product:ProductService, private userService: UserService, private sellerService: SellerService) {}
 
   ngOnInit(): void {
 
@@ -35,6 +42,7 @@ export class HeaderComponent implements OnInit{
           let userStore= localStorage.getItem('user');
           let userData= userStore && JSON.parse(userStore);
           this.userName=userData.name;
+          this.userEmail=userData.email;
           this.menuType='user';
           this.product.getCartList(userData.id)
        
@@ -43,6 +51,31 @@ export class HeaderComponent implements OnInit{
         }
       }
     });
+
+    this.userService.isUserLoggedIn.subscribe((loggedIn) => {
+      if (loggedIn) {
+        const userStore = localStorage.getItem('user');
+        if (userStore) {
+          const userData = JSON.parse(userStore);
+          this.userName = userData.name;
+          this.userEmail=userData.email;
+          this.menuType = 'user';
+        }
+      }
+    });
+
+    this.sellerService.isSellerLoggedIn.subscribe((loggedIn) => {
+  if (loggedIn) {
+    const sellerStore = localStorage.getItem('seller');
+    if (sellerStore) {
+      const sellerData = JSON.parse(sellerStore)[0];
+      this.sellerName = sellerData.name;
+      this.menuType = 'seller';
+    }
+  }
+});
+
+
 
     let cartData = localStorage.getItem('localCart');
     if(cartData){
@@ -87,6 +120,10 @@ submitSearch(val:string){
 redirectToDetails(id:number){
   this.route.navigate(['/product-details/'+id])
 }
+toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
+  
 
 }

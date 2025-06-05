@@ -1,30 +1,47 @@
+<div class="container-fluid">
 <div class="container">
-<div class="row product-details" *ngIf="productData">
-<div class="col-sm-6 product-image-div">
- <img class="product-image" src="{{productData.image}}" alt="">
-</div>
-<div class="col-sm-6 details">
-    <div class="">
-      <h1 class="mb-2">{{productData.name}}</h1>
-      <h3 class="mb-2">Price: {{productData.price}}</h3>
-      <div class="mb-2">
-        Color:
-        <h5 [style.backgroundColor]="productData.color" class="product-color"></h5>
-      </div>
-      <h6 class="mb-2">Category : {{productData.category}}</h6>
-      <h6 class="mb-2">Category : {{productData.description}}</h6>
-      <div class="button-div mb-2">
-      <button class="shopbutton" *ngIf="!removeCart" (click)="AddToCart()">Add to Cart</button>
-      <button class="shopbutton" *ngIf="removeCart" (click)="removeToCart(productData.id)">Remove to Cart</button>
-      <button class="shopbutton">Buy Now</button>
-      </div>
-      <div class="quatity-group">
-       <button (click)="handleQuantity('min')" class="quatity-group-button">-</button>
-       <input type="text" class="quantitytext" value="{{productQuantity}}"/>
-       <button (click)="handleQuantity('plus')" class="quatity-group-button">+</button>
+  <div class="row product-details" *ngIf="productData">
+    
+    <div class="col-sm-6 product-image-div">
+      <img class="product-image" src="{{productData.image}}" alt="">
+    </div>
+    <div class="col-sm-6 details">
+      <div class="">
+        <h1 class="mb-3">{{productData.name}}</h1>
+        <h3 class="mb-3">Price: {{productData.price}}</h3>
+        <div class="mb-3">
+          Color:
+          <h5 [style.backgroundColor]="productData.color" class="product-color"></h5>
+        </div>
+        <h6 class="mb-3">{{productData.category}}</h6>
+        <h6 class="mb-2">{{productData.description}}</h6>
+<!--         
+        <button  *ngIf="!removeWishlist" (click)="AddToWishlist()">add to wishlist</button>
+        <button *ngIf="removeWishlist" (click)="removeToWishlist(productData.id)" >remove from wishlist</button> -->
+
+        
+        <div class="gray-heart mb-3" *ngIf="!removeWishlist" (click)="AddToWishlist()">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        
+        <div class="red-heart mb-3" *ngIf="removeWishlist" (click)="removeToWishlist(productData.id)" >
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        
+        <div class="button-div mb-3">
+          <button class="shopbutton" *ngIf="!removeCart" (click)="AddToCart()">Add to Cart</button>
+          <button class="shopbutton" *ngIf="removeCart" (click)="removeToCart(productData.id)">Remove to Cart</button>
+          <button class="shopbutton">Buy Now</button>
+        </div>
+        <div class="quatity-group">
+          <button (click)="handleQuantity('min')" class="quatity-group-button">-</button>
+          <input type="text" class="quantitytext" value="{{productQuantity}}" />
+          <button (click)="handleQuantity('plus')" class="quatity-group-button">+</button>
+        </div>
       </div>
     </div>
+  </div>
 </div>
+<div class="shape-1"></div>
+         <div class="shape-2"></div>
 </div>
-</div>
-
