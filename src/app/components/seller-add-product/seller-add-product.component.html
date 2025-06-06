@@ -1,4 +1,7 @@
-<div class="add-product">
+<div class="container-fluid add-product">
+    <div class="row">
+        <div class="user-auth col-sm-12">
+    <div class="sign-up">
     <h1>Add New Product</h1>
     <p class="text-success">{{addProductMessage}}</p>
     <form #addProduct="ngForm" 
@@ -11,4 +14,9 @@
     <input type="text" class="form-input mb-3" placeholder="Enter Product Image URL" name="image" ngModel>
     <button class="form-button">Add Product</button>
     </form>
+    </div>
+        </div>
+    </div>
+   
+
 </div>

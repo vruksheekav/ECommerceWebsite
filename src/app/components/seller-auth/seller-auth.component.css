@@ -1,26 +1,38 @@
 
 .signbody{
-    background-color: #F4F4F1;
+background: #FFF;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 74%, rgba(239, 177, 29, 0.73) 100%);
 }
 
 .sign-up{
-    text-align: center;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    z-index: 100;
 }
 
 .sign-up h1{
     margin-top: 50px;
     text-transform: uppercase;
 }
+.sign-up h1,p{
+    color: #D25802;
+}
 
 .sellar-auth{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .common-form{
     display: flex;
     flex-direction: column;
-    width: 350px;
+     width: 100%;
 }
 
 .form-input{

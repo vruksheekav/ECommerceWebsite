@@ -1,14 +1,20 @@
 .update-product{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10%;
+     background: #FFF;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 74%, rgba(239, 177, 29, 0.73) 100%);
    
 }
+
+.user-auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .common-form{
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 100%;
 }
 
 .form-input{
@@ -42,3 +48,14 @@
  .form-button:hover{
     transform: translateY(-2px);
  }
+
+ .sign-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    z-index: 100;
+}
