@@ -2,7 +2,14 @@
 <div class="container-fluid">
 <div class="container cart-page">
 <h1 class="p-4"><i class="fa-solid fa-bag-shopping"></i> My Cart</h1>
+ <!-- Show empty cart image if cartData is empty -->
+         
+
 <div class="row">
+     <div *ngIf="cartData && cartData.length === 0" class="col-sm-12 empty-cart">
+            <img src="assets/img/original-51162083f8d27d9af7c6c0a19b9116ba.gif" alt="Empty Cart" class="empty-cart-img" />
+            <a routerLink="/home" class="form-button">Return To Home</a>
+          </div>
     <div class="col-lg-8 col-md-12 details">
       <ul *ngFor="let cart of cartData">
         <li>
@@ -24,7 +31,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-lg-4 col-md-12 summary">
+    <div class="col-lg-4 col-md-12 summary" *ngIf="cartData && cartData.length > 0">
        <h3>Summary</h3>
        <ul>
         <li>

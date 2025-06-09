@@ -32,7 +32,7 @@ and seek to stan out from the crowd.
 	</div>
 
 
-<div class="container-fluid trendy-section">
+<!-- <div class="container-fluid trendy-section">
 	<div class="container">
 		<div class="poppro">
 				<h1 class="pop-title pt-4 mb-5" id="products">Popular Products</h1>
@@ -52,10 +52,28 @@ and seek to stan out from the crowd.
 		</div>
 
 	</div>
-</div>
+</div> -->
 
 
-
+<section class="product">
+  <h2 class="product-category" style=" margin-top: 300px;">Popular Products</h2>
+  <button class="pre-btn"></button>
+  
+  <div class="product-container"  #carouselContainer>
+    <div class="product-card" *ngFor="let item of popularProducts">
+      <div class="product-image">
+        <a routerLink="/product-details/{{item.id}}" class="product-thumb">
+          <img src="{{item.image}}" alt="{{item.name}}" />
+        </a>
+      </div>
+      <div class="product-info">
+        <h2>{{item.name}}</h2>
+        <p class="product-short-description">{{item.description}}</p>
+        <span class="price">₹{{item.price}}</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 
    <div class="container-fluid trendy-section">
@@ -67,7 +85,7 @@ and seek to stan out from the crowd.
 					<img src="{{item.image}}"
 						alt="img1" class="trendy-img">
 					<div class="product-details">
-						<h6 class="name-head">{{item.name}}</h6>
+						<h2>{{item.name}}</h2>
 					
 					<div class="price-details">
 						<h6>Price: {{item.price}}</h6>

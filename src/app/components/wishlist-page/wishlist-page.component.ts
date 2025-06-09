@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { wishlist } from '../../data-type';
 import { ProductService } from '../../services/product.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterEvent, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-wishlist-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule,],
   templateUrl: './wishlist-page.component.html',
   styleUrl: './wishlist-page.component.css'
 })

@@ -50,12 +50,12 @@
                 <li><a routerLink="home">Home</a></li>
                 <li>
                     <a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">
-                        <i class="fa-solid fa-heart custom-size"></i>
+                        Wishlist
                     </a>
                 </li>
                 <li>
                     <a routerLink="cart-page">
-                        <i class="fa-solid fa-cart-shopping custom-size"></i>({{ cartItems }})
+                        Cart({{ cartItems }})
                     </a>
                 </li>
                 <li class="dropdown">
@@ -80,10 +80,8 @@
                 <li><a routerLink="seller-auth">Seller</a></li>
                 <li><a routerLink="home">Home</a></li>
                 <li><a routerLink="my-orders">Orders</a></li>
-                <li><a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">
-                    <i class="fa-solid fa-heart custom-size"></i></a></li>
-                <li><a [routerLink]="cartItems>0?'cart-page':null"><i
-                            class="fa-solid fa-cart-shopping custom-size"></i>({{cartItems}})</a></li>
+                <li><a routerLink="wishlist-page" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">Wishlist</a></li>
+                <li><a [routerLink]="cartItems>0?'cart-page':null">Cart({{cartItems}})</a></li>
                 <!-- <li class="dropdown">
                     <span class="pfp">{{ userName[0] | uppercase }}</span>
                     <div class="dropdown-content ">

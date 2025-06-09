@@ -60,8 +60,8 @@
 
 .nav .nav-search button{
     color: #ffffff;
-    background-color: #EFB11D;
-    border: 1px solid #EFB11D;
+    background-color: #E43D12;
+    border: 1px solid #E43D12;
     border-radius: 0 5px 5px 0;
     height: 40px;
     
@@ -182,15 +182,18 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 120%;
+  top: 100%; /* Instead of top: 120% */
   right: 0;
+  left: auto;
+  width: max-content;
+  min-width: 220px;
   background-color: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  list-style: none;
-  padding: 0;
+  border-radius: 8px;
+  padding: 10px;
   display: none;
-  z-index: 10;
+  z-index: 999;
+
 }
 
 .profile-dropdown:hover .dropdown-menu {
@@ -310,7 +313,7 @@
     right: -100%;
     z-index: 100;
     background-color: #ffffff;
-    background: linear-gradient(90deg, rgba(239, 177, 29, 0.6) 0%, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0.73) 100%);
+    background: linear-gradient(90deg, rgb(239, 176, 29) 0%, rgba(255, 255, 255, 1) 15%, rgb(255, 255, 255) 100%);
     transition: all 0.2s ease-in-out;
 
   }
@@ -335,7 +338,7 @@
     z-index: 10;
     background-color: rgba(225, 225, 209, 0.356);
     width: 50%;
-    top: 600px;
+    top: 620px;
     margin-left: 150px;
     padding: 0;
     

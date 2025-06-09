@@ -336,9 +336,9 @@
       "name": "Dress",
       "price": "500",
       "category": "Dress",
-      "color": "Pink",
-      "description": "Pink Dress",
-      "image": "https://img.freepik.com/free-photo/stylish-red-haired-woman-playing-with-hairs-posing-pink-lien-dress-with-sleeves-pink_273443-4417.jpg?semt=ais_hybrid&w=740",
+      "color": "Black",
+      "description": "Black Dress",
+      "image": "https://img.freepik.com/premium-photo/young-woman-blue-jacket-jeans-is-smiling-holding-purse-concept-casual-relaxed-fashion-with-womans-outfit-accessories-suggesting-comfortable-approachable-demeanor_121837-23446.jpg",
       "id": "6fa2"
     },
     {
@@ -349,6 +349,42 @@
       "color": "Brown",
       "description": "Brown Jacket",
       "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg"
+    },
+    {
+      "id": "6132",
+      "name": "Denim Joggers",
+      "price": "500",
+      "category": "Joggers",
+      "color": "Blue",
+      "description": "Blue Joggers",
+      "image": "https://img.freepik.com/free-photo/fashionable-young-woman-posing-outside_23-2148638305.jpg"
+    },
+    {
+      "id": "212a",
+      "name": "Checks Shirt",
+      "price": "700",
+      "category": "Shirt",
+      "color": "Green",
+      "description": "Green Strips Checks Shirt",
+      "image": "https://img.freepik.com/free-photo/stylish-girl_1157-8252.jpg"
+    },
+    {
+      "id": "6730",
+      "name": "Black Coat",
+      "price": "2000",
+      "category": "Coat",
+      "color": "Black",
+      "description": "Black Coat",
+      "image": "https://img.freepik.com/free-photo/portrait-bossy-woman-with-attitude-posing-white_158595-5521.jpg"
+    },
+    {
+      "id": "a6e0",
+      "name": "Long Sleeve Top",
+      "price": "3000",
+      "category": "Top",
+      "color": "Red",
+      "description": "Red Long Sleeve Top",
+      "image": "https://img.freepik.com/free-photo/attractive-young-woman-leaning-wall-with-hands-her-pocket_23-2148187425.jpg"
     }
   ],
   "users": [
@@ -419,20 +455,7 @@
       "email": "gauri@gmail.com"
     }
   ],
-  "cart": [
-    {
-      "id": "fa9e",
-      "name": "Brown Jacket",
-      "price": "500",
-      "category": "Trouser",
-      "color": "Brown",
-      "description": "Brown Jacket",
-      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg",
-      "quantity": 1,
-      "userId": "9bd4",
-      "productId": "6742"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "3955",

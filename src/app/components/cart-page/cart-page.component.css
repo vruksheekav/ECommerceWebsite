@@ -20,6 +20,11 @@ min-height: 100vh !important;
 }
 .cart-page h1{
     text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #E43D12;
+    
     
 }
 
@@ -32,6 +37,20 @@ min-height: 100vh !important;
 
 }
 
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart-img{
+    width: 70%;
+}
+.form-button {
+    text-decoration: none !important;
+    color: #fff;
+}
 
 
 .details ul{
@@ -115,5 +134,12 @@ font-size: 20px;
     .details ul li{
         justify-content: start;
     }
+
+    .empty-cart{
+        margin-top: 200px;
+    }
+    .empty-cart-img{
+    width: 100%;
+}
 }
 
