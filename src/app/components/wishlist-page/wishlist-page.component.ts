@@ -14,18 +14,30 @@ import { Router, RouterEvent, RouterLink } from '@angular/router';
 export class WishlistPageComponent implements OnInit{
 
   wishlistData:wishlist[]|undefined;
-item: any;
+  item: any;
+wishlist: any;
 
   constructor(private product:ProductService, private router:Router){}
 
   ngOnInit(): void {
 
-    this.product.currentWishlist().subscribe((result)=>{
-      this.wishlistData=result;
-    })
-    
+   
+    this.loadDetails();
+
     
   }
-
+  
+   removeToWishlist(wishlistId: number | string | undefined) {
+    if (wishlistId && this.wishlistData) {
+      this.product.removeToWishlist(wishlistId).subscribe(() => {
+        this.loadDetails();
+      });
+    }
+  }
+  loadDetails(){
+      this.product.currentWishlist().subscribe((result)=>{
+      this.wishlistData=result;
+    })
+  }
 
 }

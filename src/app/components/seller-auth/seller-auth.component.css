@@ -82,7 +82,13 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     margin: 0px;
     width: 100%;
 }
-.auth-toggle-link{
+a.auth-toggle-link{
+    color: #D25802;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+a.auth-toggle-link:hover{
     color: #D25802;
     font-size: 14px;
     margin-top: 20px;

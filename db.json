@@ -329,15 +329,15 @@
       "category": "Trouser",
       "color": "White",
       "description": "White Denim Jacket",
-      "image": "https://img.freepik.com/free-photo/young-pretty-woman-listening-music-wireless-earphones_1303-20585.jpg?w=360",
+      "image": "https://img.freepik.com/free-photo/elegant-businesswoman-standing-office_1157-33426.jpg",
       "id": "5ed9"
     },
     {
-      "name": "Dress",
+      "name": "Denim Suit",
       "price": "500",
-      "category": "Dress",
-      "color": "Black",
-      "description": "Black Dress",
+      "category": "Suit",
+      "color": "Blue",
+      "description": "Denim Suit",
       "image": "https://img.freepik.com/premium-photo/young-woman-blue-jacket-jeans-is-smiling-holding-purse-concept-casual-relaxed-fashion-with-womans-outfit-accessories-suggesting-comfortable-approachable-demeanor_121837-23446.jpg",
       "id": "6fa2"
     },
@@ -474,50 +474,5 @@
       "userId": "9bd4"
     }
   ],
-  "wishlist": [
-    {
-      "id": "2c4c",
-      "name": "Jacket",
-      "price": "500",
-      "category": "Trouser",
-      "color": "Brown",
-      "description": "Brown Jacket",
-      "image": "https://img.freepik.com/free-photo/close-up-portrait-beautiful-teenager_23-2149153326.jpg",
-      "userId": "9bd4",
-      "productId": null
-    },
-    {
-      "id": "a91d",
-      "name": "Denim Jacket",
-      "price": "600",
-      "category": "Trouser",
-      "color": "White",
-      "description": "White Denim Jacket",
-      "image": "https://img.freepik.com/free-photo/young-pretty-woman-listening-music-wireless-earphones_1303-20585.jpg?w=360",
-      "userId": "9bd4",
-      "productId": "5ed9"
-    },
-    {
-      "id": "c145",
-      "name": "White Jacket",
-      "price": "200",
-      "category": "Trouser",
-      "color": "White",
-      "description": "White Jacket",
-      "image": "https://img.freepik.com/free-photo/trendy-woman-light-jacket-holds-cup-coffee-outdoors-shorthaired-girl-bright-sunlasses-jeans-with-brown-backpack-posing-city_197531-29475.jpg",
-      "userId": "9bd4",
-      "productId": "1291"
-    },
-    {
-      "id": "2622",
-      "name": "Dress",
-      "price": "500",
-      "category": "Dress",
-      "color": "Pink",
-      "description": "Pink Dress",
-      "image": "https://img.freepik.com/free-photo/stylish-red-haired-woman-playing-with-hairs-posing-pink-lien-dress-with-sleeves-pink_273443-4417.jpg?semt=ais_hybrid&w=740",
-      "userId": "9bd4",
-      "productId": "6fa2"
-    }
-  ]
+  "wishlist": []
 }

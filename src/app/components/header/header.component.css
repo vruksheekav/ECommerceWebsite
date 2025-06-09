@@ -299,6 +299,11 @@
   flex-direction: column;
 }
 
+.user-nav {
+  flex-direction: column-reverse !important;
+}
+
+
 .nav-menu ul li{
   margin-bottom: 20px;
 }

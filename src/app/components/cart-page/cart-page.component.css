@@ -47,10 +47,7 @@ min-height: 100vh !important;
 .empty-cart-img{
     width: 70%;
 }
-.form-button {
-    text-decoration: none !important;
-    color: #fff;
-}
+
 
 
 .details ul{
@@ -114,6 +111,11 @@ font-size: 20px;
 
 
 }
+a.form-button {
+    text-decoration: none !important;
+  
+}
+
 
 .maxwidth{
     width: 100%;

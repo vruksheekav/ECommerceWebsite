@@ -33,10 +33,12 @@ min-height: 100vh !important;
 }
 .heart{
     text-align: center;
-    color:#D6536D;
+    color:#D6536D !important;
     font-size: 40px;
 }
-
+.mrtop{
+    margin-top: 30px !important;
+}
 
 .details ul{
     justify-content: space-between;
@@ -100,6 +102,25 @@ font-size: 20px;
 
 
 }
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart-img{
+    width: 50%;
+}
+a.form-button {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+a.form-button:hover{
+    color: #EFB11D;
+}
+
 
 .maxwidth{
     width: 100%;
@@ -120,5 +141,11 @@ font-size: 20px;
     .details ul li{
         justify-content: start;
     }
+    
+    .empty-cart{
+        margin-top: 200px;
+    }
+    .empty-cart-img{
+    width: 100%;}
 }
 

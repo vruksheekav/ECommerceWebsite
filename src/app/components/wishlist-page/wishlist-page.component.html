@@ -1,9 +1,13 @@
 <div class="cart-page-bg">
 <div class="container-fluid">
 <div class="container cart-page">
-    <i class="fa-solid fa-heart heart"></i>
-<h1 class="p-4">My Wishlist</h1>
+   
+<h1 class="p-4 pb-0"> <i class="fa-solid fa-heart heart"></i> My Wishlist</h1>
 <div class="row">
+      <div *ngIf="wishlistData && wishlistData.length === 0" class="col-sm-12 empty-cart">
+            <img src="assets/img/add-to-wishlist-animation-download-in-lottie-json-gif-static-svg-file-formats--shopping-list-online-ecommerce-set-02-pack-e-commerce-animations-8137187-ezgif.com-video-to-gif-converter.gif" alt="Empty Cart" class="empty-cart-img" />
+            <a routerLink="/home" class="form-button mrtop">Return To Home</a>
+          </div>
     <div class="col-lg-12 col-md-12 details">
       <ul *ngFor="let cart of wishlistData">
         <li>
@@ -23,7 +27,7 @@
              <span>{{cart.description}}</span>
         </li>
         <li>
-            <button class="form-button">View Details</button>
+            <button class="form-button" (click)="removeToWishlist(cart.id)">Remove From Cart</button>
         </li>
       </ul>
     </div>

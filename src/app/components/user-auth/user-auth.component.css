@@ -45,6 +45,8 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     color: #fff;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
+    font-size: 20px;
+
 }
 
  .form-button:hover{
@@ -70,7 +72,14 @@ background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 25
     width: 100%;
 }
 
-.auth-toggle-link{
+a.auth-toggle-link{
+    
+    color: #D6536D;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+a.auth-toggle-link:hover{
     
     color: #D6536D;
     font-size: 14px;
