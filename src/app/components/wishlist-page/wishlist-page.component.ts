@@ -7,7 +7,7 @@ import { Router, RouterEvent, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-wishlist-page',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule,RouterLink],
   templateUrl: './wishlist-page.component.html',
   styleUrl: './wishlist-page.component.css'
 })
@@ -15,7 +15,7 @@ export class WishlistPageComponent implements OnInit{
 
   wishlistData:wishlist[]|undefined;
   item: any;
-wishlist: any;
+  wishlist: any;
 
   constructor(private product:ProductService, private router:Router){}
 
